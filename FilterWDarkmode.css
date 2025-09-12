@@ -1,0 +1,194 @@
+  body, html {
+      height: 100%;
+      margin: 0;
+      background-color: #ffffff; /* default light mode */
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Center the search wrapper horizontally near top */
+    .search-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      position: relative;
+      margin: 20px auto 0;
+      max-width: 700px;
+    }
+
+    /* Search box container */
+    .box {
+      box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.508);
+      border: 4px solid black;
+      width: 47px;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      transition: width 0.3s;
+      cursor: pointer;
+      background: white;
+      border-radius: 15px;
+      position: relative; /* for input absolute fallback removed */
+    }
+
+    /* Expand input on hover/focus */
+    .box:hover, .box:focus-within {
+      width: 200px;
+    }
+
+    .box img {
+      height: 40px;
+      flex-shrink: 0;
+    }
+
+    .box input {
+      border: none;
+      outline: none;
+      margin-left: 5px;
+      width: 0;
+      opacity: 0;
+      transition: width 0.3s, opacity 0.3s;
+      background: white;
+      font-size: 16px;
+      flex-grow: 1;
+      min-width: 0;
+    }
+
+    .box:hover input,
+    .box:focus-within input {
+      width: 140px;
+      opacity: 1;
+    }
+
+    /* Dropdown aligned exactly below search box */
+    .dropdown {
+      border: 1px solid black;
+      border-top: none;
+      width: 212px;
+      max-height: 100px;
+      overflow-y: auto;
+      display: none;
+      background: white;
+      border-radius: 0 0 5px 5px;
+      box-sizing: border-box;
+      position: absolute;
+      top: calc(90% + 5px); 
+      left: 210px;
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* Dropdown items */
+    .dropdown div {
+      padding: 5px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .dropdown div:hover {
+      background-color: #ddd;
+    }
+
+    /* Spinner to the right of search box */
+    .spinner {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 3px solid black;
+      border-top: 3px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      flex-shrink: 0;
+      margin-left: 10px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Dark mode toggle switch */
+    .toggle-switch {
+      box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.508);
+      position: relative;
+      width: 50px;
+      height: 24px;
+      border: 4px solid black;
+      border-radius: 34px;
+      box-sizing: content-box;
+      transition: border-color 0.3s;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      background-color: rgb(159, 150, 150);
+      border-radius: 34px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: 0.4s;
+    }
+
+    .slider:before {
+      content: "";
+      position: absolute;
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.4s;
+    }
+
+    .toggle-switch input:checked + .slider {
+      background-color: #222;
+    }
+
+    .toggle-switch input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    main {
+      margin: 20px auto;
+      max-width: 600px;
+      padding-top: 20px;
+    }
+
+    .contents > div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 20px;
+    }
+
+    .contents img {
+      height: 150px;
+      width: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .contents h1 {
+      margin: 0 0 6px 0;
+      font-size: 1.4rem;
+    }
+
+    .contents p {
+      margin: 0;
+      
+    }
