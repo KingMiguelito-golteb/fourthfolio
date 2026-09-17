@@ -15,14 +15,14 @@ If you're a panel / recruiter browsing my new portfolio and you clicked an *“o
 In your **new portfolio**, on any old project card, add:
 
 ```html
-<a href="https://fourthfolio.vercel.app/clouds.html?from=new" target="_blank" rel="noopener">
+<a href="https://king-miguel-archive-portfolio.vercel.app/clouds.html?from=new" target="_blank" rel="noopener">
   See older project → Archive
 </a>
 <!-- or simply: -->
-<a href="https://fourthfolio.vercel.app/?archive=1#projects">View archive projects</a>
+<a href="https://king-miguel-archive-portfolio.vercel.app/?archive=1#projects">View archive projects</a>
 ```
 
-The `?from=new` param highlights the top archive banner for 4 seconds so visitors know they came from the new site. Any link to `https://fourthfolio.vercel.app/` works — the banner is always visible and has a **“visit my new portfolio →”** CTA.
+The `?from=new` param highlights the top archive banner for 4 seconds so visitors know they came from the new site. Any link to `https://king-miguel-archive-portfolio.vercel.app/` works — the banner is always visible and has a **“visit my new portfolio →”** CTA.
 
 ### 2) From this ARCHIVE → NEW (already set up)
 
@@ -66,7 +66,7 @@ The “security error when clicking the link from GitHub” happens because:
 2. Go to **vercel.com → New Project → Import** `KingMiguelito-golteb/fourthfolio`
 3. Leave defaults (Framework: *Other* / Static, Root Directory: `./`, Build: none) → **Deploy**
 
-Vercel will give you `https://fourthfolio.vercel.app` (or your chosen name) with **HTTPS** and no security warning. Share that link from GitHub / your new portfolio.
+Vercel will give you `https://king-miguel-archive-portfolio.vercel.app` (or your chosen name) with **HTTPS** and no security warning. Share that link from GitHub / your new portfolio.
 
 **Alternative via CLI:**
 
@@ -160,8 +160,8 @@ bootstrap-5.3.7-dist/       — local Bootstrap (works offline on Vercel)
 ## 🔧 Quick checklist before defense
 
 - [ ] Replace `https://your-new-portfolio.vercel.app` everywhere with your real new URL (search in project)
-- [ ] Test `https://fourthfolio.vercel.app/` → banner visible, `New Portfolio →` goes to your new site
-- [ ] Test from new portfolio: add a link `https://fourthfolio.vercel.app/?from=new#projects` and verify banner highlights
+- [ ] Test `https://king-miguel-archive-portfolio.vercel.app/` → banner visible, `New Portfolio →` goes to your new site
+- [ ] Test from new portfolio: add a link `https://king-miguel-archive-portfolio.vercel.app/?from=new#projects` and verify banner highlights
 - [ ] Click each demo: `clouds.html`, `calcu.html`, etc. — ensure nav `← Back to Archive` works
 - [ ] Check resume: `OnlineCertificates/Resume1.pdf` opens (old backtick fixed)
 - [ ] Optional: connect contact form to **Formspree** — replace JS handler in `index.html` with `fetch("https://formspree.io/f/YOUR_ID", ...)`
