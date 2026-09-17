@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moving Clouds — Archive Project | King Miguel</title>
+  <meta name="description" content="Archive project: animated moving clouds with JavaScript — randomization, transitions and timing practice.">
+  <link rel="stylesheet" href="cloud1.css">
+  <style>
+    .project-nav { position:fixed; top:0; left:0; width:100%; background:#0d1117; color:#e6edf3; padding:10px 16px; display:flex; justify-content:space-between; align-items:center; font-family:system-ui,sans-serif; font-size:14px; z-index:20; }
+    .project-nav a { color:#58a6ff; text-decoration:none; font-weight:600; }
+    .project-nav a:hover { color:#79c0ff; }
+    .project-nav .badge { background:#21262d; border:1px solid #30363d; padding:4px 8px; border-radius:999px; font-size:11px; letter-spacing:.06em; }
+    #container { padding-top:42px; box-sizing:border-box; }
+    .caption { position:fixed; bottom:16px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.55); color:#fff; padding:8px 14px; border-radius:999px; font-family:system-ui,sans-serif; font-size:13px; backdrop-filter:blur(6px); z-index:30; text-align:center; }
+  </style>
+</head>
+<body>
+  <nav class="project-nav" aria-label="Project navigation">
+    <a href="index.html#projects">← Back to Archive</a>
+    <span class="badge">ARCHIVE • Moving Clouds (JS)</span>
+    <a href="index.html">New Portfolio →</a>
+  </nav>
+  <div id="container" aria-label="Animated clouds">
+    <div class="cloud">
+      <div class="cloudBubble1"></div>
+      <div class="cloudBubble2"></div>
+    </div>
+  </div>
+  <div class="caption">JavaScript animation • 20 clouds with random scale & drift</div>
+  <script src="cloud1.js"></script>
+</body>
+</html>

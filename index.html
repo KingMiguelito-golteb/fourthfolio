@@ -1,788 +1,651 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keyword" content="King Miguel T. Remo, Remo, King Miguel T., King Miguel, Remo King">
-    <meta name="description" content="Hello, I am King Miguel Remo and I am but a humble Web Developer. Please do consider hiring me.">
-    <link rel="icon" href="OnlineCertificates/EzIcon.png">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#0d1117">
+  <meta name="author" content="King Miguel T. Remo">
+  <meta name="keywords" content="King Miguel Remo, KingMiguelito, BSIT, Web Developer, Portfolio, CSTC, Philippines">
+  <meta name="description" content="Archive portfolio (2023–2024) of King Miguel Remo — BSIT student & aspiring web developer. Early projects, UI clones, JavaScript apps, certificates and tech stack. View my latest portfolio for recent work.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://king-miguel-archive-portfolio.vercel.app/">
 
-    <title>King | Home</title>
-    <link rel="stylesheet" href="bootstrap-5.3.7-dist/css/bootstrap.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="King Miguel Remo — Archive Portfolio (2023–2024)">
+  <meta property="og:description" content="Early web projects from my 3rd-year BSIT journey. Calculators, UI clones, animations & more. Check my latest portfolio for new work.">
+  <meta property="og:url" content="https://king-miguel-archive-portfolio.vercel.app/">
+  <meta property="og:image" content="OnlineCertificates/EzIcon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="King Miguel Remo — Archive Portfolio">
+  <meta name="twitter:description" content="Small projects & learning experiments from my early web-dev journey.">
+
+  <link rel="icon" href="OnlineCertificates/EzIcon.png" type="image/png">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <title>King Miguel Remo | Archive Portfolio (2023–2024)</title>
+
+  <link rel="stylesheet" href="bootstrap-5.3.7-dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="portfolio.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  </head>
-  <body>
-         <div id="cloudContainer">
-      <div id="loading-text">0%</div>
-      <div class="cloud">
-        <div class="cloudBubble1"></div>
-        <div class="cloudBubble2"></div>
-      </div>
+
+  <!-- Archive banner config -->
+  <script>
+    const NEW_PORTFOLIO_URL = "https://king-miguel-portfolio.vercel.app"; // ← your NEW portfolio (live)
+    // If ?from=new or ?archive is set, keep banner highlighted. Also handle localStorage dismiss.
+  </script>
+
+  <noscript>
+    <style>
+      #cloudContainer { display: none !important; }
+      #portfolio { display: block !important; opacity: 1 !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+
+  <!-- Cloud Preloader -->
+  <div id="cloudContainer" aria-hidden="true">
+    <div id="loading-text" aria-live="polite">0%</div>
+    <div class="cloud">
+      <div class="cloudBubble1"></div>
+      <div class="cloudBubble2"></div>
     </div>
+  </div>
 
+  <!-- Archive Banner — visible on every load, dismissible, links to your new portfolio -->
+  <div id="archive-banner" class="archive-banner" role="status" aria-label="Archive notice">
+    <div class="archive-banner-inner">
+      <span class="archive-banner-text">
+        <i class="bi bi-archive"></i>
+        <strong>Archive Portfolio (2023–2024)</strong> — You're viewing my early 3rd-year projects.
+        <span class="d-none d-md-inline"> For my latest work, </span>
+        <a id="new-portfolio-link" href="https://king-miguel-portfolio.vercel.app" target="_blank" rel="noopener noreferrer" class="archive-link">
+          visit my new portfolio <i class="bi bi-box-arrow-up-right"></i>
+        </a>
+      </span>
+      <button type="button" class="archive-dismiss" aria-label="Dismiss archive notice" onclick="dismissArchiveBanner()">&times;</button>
+    </div>
+  </div>
 
-      <div id="portfolio" style="display:none;">
-  <!--put the preloader in here niggaballs
-  & dont forget to close the div to the very end -->
+  <!-- Main Portfolio -->
+  <div id="portfolio" style="display:none;">
 
-   <div id="portfolio" style="display:none;">
- <header class="sticky-top" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1030;">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <header class="sticky-top" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1030;">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Primary navigation">
         <div class="container">
-       <i class="fa-solid fa-crown" style="font-size: 1.8rem; cursor: pointer; color: white; margin-right: 15px;"></i>
-            <a class="navbar-brand" href="#">Miguelito</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample" aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarsExample">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
+          <i class="fa-solid fa-crown" style="font-size: 1.8rem; color: white; margin-right: 12px;" aria-hidden="true"></i>
+          <a class="navbar-brand fw-bold" href="#">Miguelito</a>
+          <span class="badge bg-secondary ms-2 d-none d-sm-inline" style="font-size: 0.7rem; letter-spacing: 0.05em;">ARCHIVE</span>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample" aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarsExample">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+              <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" href="#hobbies">Hobbies</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+              <li class="nav-item ms-lg-3">
+                <a class="btn btn-outline-light btn-sm mt-2 mt-lg-0" id="nav-new-portfolio" href="https://king-miguel-portfolio.vercel.app" target="_blank" rel="noopener noreferrer">
+                  New Portfolio <i class="bi bi-arrow-right-short"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
-</header>
+      </nav>
+    </header>
 
+    <main>
 
-     
-
-      <main>
-      
       <section id="about" class="section-block reveal">
-  <div class="container">
-    <div class="row align-items-center">
-      <!-- Left side -->
-      <div class="col-md-6">
-        <h6 id = "tebgol" >Web/Mobile App Development</h6>
-        <h1 id = "intro" >HI, I AM A COLLEGE STUDENT WITH AVERAGE SKILLS IN WEB DEVELOPMENT</h1>
-        <p id = "introPa" >My main goal is to be a better Web Developer than I was yesterday and to develop a Website decent enough to the human eye.</p>
-       <div class="bottom-button">
-        <div class = "bottown"> <a href = "https://discord.com/users/64417"> CHAT ME ON DISCORD</a>
-
-        
-        </div>
-
-        <a href = "mailto:iggytesoro28@gmail.com" id = "goldenteb"> OR SEND ME AN EMAIL</a>
-       </div>
-       
-      </div>
-
-
-     <!-- right side -->
-      <div class="col-md-6 d-flex justify-content-center">
-        <div class="parent">
-          <div class="card">  
-            <div class="logo">
-              <span class="circle circle1"></span>
-              <span class="circle circle2"></span>
-              <span class="circle circle3"></span>
-              <span class="circle circle4"></span>
+        <div class="container">
+          <div class="row align-items-center g-4">
+            <!-- Left side -->
+            <div class="col-md-6">
+              <h6 id="tebgol" class="text-uppercase text-muted fw-bold" style="letter-spacing: 0.12em;">Web / Mobile App Development</h6>
+              <h1 id="intro">Hi, I'm a BSIT student passionate about building clean & user-focused web experiences</h1>
+              <p id="introPa" class="lead">My goal is simple: be a better developer than I was yesterday — and build websites that are clean, responsive, and pleasant to use.</p>
+              <p class="text-muted small mb-4">This archive collects my early learning projects (2023–2024). For my recent, production-ready work, see my <a href="https://king-miguel-portfolio.vercel.app" target="_blank" rel="noopener" class="new-portfolio-inline">new portfolio</a>.</p>
+              <div class="bottom-button">
+                <div class="bottown">
+                  <a href="https://discord.com/users/64417" target="_blank" rel="noopener">CHAT ME ON DISCORD</a>
+                </div>
+                <a href="mailto:iggytesoro28@gmail.com" id="goldenteb">OR SEND ME AN EMAIL</a>
+              </div>
             </div>
 
-            <div class="glass"></div>
-
-            <div class="content">
-              <span class="title">King Miguel</span>
-              <span class="text">BSIT3 - BLK1</span>
-            </div>
-
-            <div class="bottom">
-              <div class="social-buttons-container">
-               <a href="https://www.instagram.com/lule1m/" target="_blank" class="social-button social-button1">
-               <i class="bi bi-instagram"></i>
-                </a>
-              <a href="https://www.facebook.com/goltebetLog" target="_blank" class="social-button">
-              <i class="bi bi-facebook"></i>
-              </a>
-               <a href="https://discord.com/users/64417" target="_blank" class="social-button">
-               <i class="bi bi-discord"></i>
-                </a>
-             </div>
-  
-                </svg>
+            <!-- Right side: profile card -->
+            <div class="col-md-6 d-flex justify-content-center">
+              <div class="parent">
+                <div class="card">
+                  <div class="logo" aria-hidden="true">
+                    <span class="circle circle1"></span>
+                    <span class="circle circle2"></span>
+                    <span class="circle circle3"></span>
+                    <span class="circle circle4"></span>
+                  </div>
+                  <div class="glass"></div>
+                  <div class="content">
+                    <span class="title">King Miguel Remo</span>
+                    <span class="text">BSIT 3 - BLK 1 • CSTC</span>
+                    <span class="text" style="margin-top: 6px; font-size: 13px; opacity: 0.85;">Aspiring Web Developer</span>
+                  </div>
+                  <div class="bottom">
+                    <div class="social-buttons-container">
+                      <a href="https://www.instagram.com/lule1m/" target="_blank" rel="noopener" class="social-button" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                      </a>
+                      <a href="https://www.facebook.com/goltebetLog" target="_blank" rel="noopener" class="social-button" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                      </a>
+                      <a href="https://discord.com/users/64417" target="_blank" rel="noopener" class="social-button" aria-label="Discord">
+                        <i class="bi bi-discord"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      
-    </div>
-  </div>
-</section> 
-<div class = "reveal">
-  <section class="education" id = "education">
-  <h2 class="EDUC">Education</h2>
-  <div id="educationCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+      </section>
 
-      <!-- Slide 1 -->
-      <div class="carousel-item active">
-        <img src="OnlineCertificates/primary skol.jpg" 
-             class="d-block w-100" 
-             style="height: 100vh; object-fit: cover; opacity: 0.7;" 
-             alt="Primary School">
+      <div class="reveal">
+        <section class="education" id="education">
+          <h2 class="EDUC">Education</h2>
+          <div id="educationCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+            <div class="carousel-inner">
 
-        <div class="carousel-caption d-none d-md-block">
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                <img src="OnlineCertificates/primary-skol.jpg" class="d-block w-100" style="height: 100vh; object-fit: cover; opacity: 0.7;" alt="Central Main Elementary School building">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Primary Education</h5>
+                  <p>Central Main Elementary School | 2011 – 2017</p>
+                </div>
+                <div class="custom-caption d-md-block">
+                  <h2 style="text-shadow: 4px 4px 6px rgba(0,0,0,0.7); text-align: center;">Central Main Elementary School</h2>
+                  <p style="text-align: left; font-size: 18px; text-shadow: 4px 4px 6px rgba(0,0,0,0.7); margin-top: 20px; line-height: 1.6;">
+                    I studied at Central Main Elementary School from Grades 1 to 6. While I didn't earn special awards back then, those years built my curiosity and taught me the value of showing up and trying — lessons I carried forward.
+                  </p>
+                </div>
+              </div>
 
-          <h5>Primary Education</h5>
-          <p>Central Main Elementary School | 2011 – 2017</p>
-       
-        </div>
-  <div class="custom-caption d-md-block">
-    <h2 style = "text-shadow: 4px 4px 6px rgba(0,0,0,0.7); text-align: center;">Central Main Elementary School</h2>
-    <p style = "text-align: left; font-size: 20px; text-shadow: 4px 4px 6px rgba(0,0,0,0.7); margin-top: 25px;;">
-      I have studied in Central Main Elementary School from grades 1 to 6 and graduated.
-      I have no achievements whatsoever nor do I have any awards. I must admit that
-      I was fooling around quite a bit when I was in my elementary days and did not
-      take school as serious as most students at that time.
-    </p>
-  </div>
-    
-        
-      </div>
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+                <img src="OnlineCertificates/Secondary.jpg" class="d-block w-100" style="height: 100vh; object-fit: cover; opacity: 0.7;" alt="Sariaya Institute Junior High">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Secondary Education</h5>
+                  <p>Sariaya Institute Inc. Junior High School | 2017 – 2021</p>
+                </div>
+                <div class="custom-caption1">
+                  <h2 style="text-shadow: 4px 4px 6px rgba(0,0,0,0.7); text-align: center;">Sariaya Institute, Inc.</h2>
+                  <p style="text-align: left; font-size: 18px; text-shadow: 4px 4px 6px rgba(0,0,0,0.7); margin-top: 20px; line-height: 1.6;">
+                    I attended Junior High at Sariaya Institute, Inc. — just a short walk from home. I wasn't a top-ranked student, but this is where I first got introduced to web development, which later became my college track.
+                  </p>
+                </div>
+              </div>
 
-      <!-- Slide 2 -->
-      <div class="carousel-item">
-        <img src="OnlineCertificates/Secondary.jpg" 
-             class="d-block w-100" 
-             style="height: 100vh; object-fit: cover; opacity: 0.7;" 
-             alt="High School">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Secondary Education</h5>
-          <p>Sariaya Institute Inc. Junior High School | 2017 – 2021</p>
-        </div>
+              <!-- Slide 3 -->
+              <div class="carousel-item">
+                <img src="OnlineCertificates/secondary2.jpg" class="d-block w-100" style="height: 100vh; object-fit: cover; opacity: 0.7;" alt="Sariaya Institute Senior High">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Secondary Education</h5>
+                  <p>Sariaya Institute, Inc. Senior High School | 2021 – 2023</p>
+                </div>
+                <div class="custom-caption">
+                  <h2 style="text-shadow: 4px 4px 6px rgba(0,0,0,0.7); text-align: center;">Sariaya Institute, Inc. — Senior High (STEM)</h2>
+                  <p style="text-align: left; font-size: 18px; text-shadow: 4px 4px 6px rgba(0,0,0,0.7); margin-top: 20px; line-height: 1.6;">
+                    I stayed at the same school for Senior High and took the STEM strand. It was challenging, but I was honored as an Honor Student in Grade 12 — a milestone that motivated me to keep improving.
+                  </p>
+                </div>
+              </div>
 
-     <div class="custom-caption1">
-    <h2 style = "text-shadow: 4px 4px 6px rgba(0,0,0,0.7); text-align: center;">Sariaya Institute, Inc.</h2>
-    <p style = "text-align: left; font-size: 20px; text-shadow: 4px 4px 6px rgba(0,0,0,0.7); margin-top: 25px;;">
-      I reached high school and studied in Sariaya Institute, Inc. The reason
-      I picked the school was because it was literally 15 steps away from our house,
-      yet somehow I'm still always late. I didn't have any achievement nor did I get an
-      award from grades 7 to 10. I graduated as below average student and I suppose this is 
-      the stage where I got introduced into Web Developing which later became my track in College. 
-    </p>
-  </div>
-      </div>
+              <!-- Slide 4 -->
+              <div class="carousel-item">
+                <img src="OnlineCertificates/cstc-campus.png" class="d-block w-100" style="height: 100vh; object-fit: cover; opacity: 0.7;" alt="CSTC College campus">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Bachelor of Science in Information Technology</h5>
+                  <p>College of Sciences, Technology and Communications, Inc. | 2023 – Present</p>
+                </div>
+                <div class="custom-caption" style="margin-top: 20px;">
+                  <h2 style="text-shadow: 4px 4px 6px rgba(0,0,0,0.7); text-align: center;">CSTC — College of Sciences, Technology and Communications, Inc.</h2>
+                  <p style="text-align: left; font-size: 18px; text-shadow: 4px 4px 6px rgba(0,0,0,0.7); margin-top: 20px; line-height: 1.6;">
+                    Currently pursuing BSIT at CSTC. I'm focused on strengthening my fundamentals in web & mobile development, building real projects, and preparing for my final defense with a stronger, more professional portfolio.
+                  </p>
+                </div>
+              </div>
 
-      <!-- Slide 3 -->
-      <div class="carousel-item">
-        <img src="OnlineCertificates/secondary2.jpg" 
-             class="d-block w-100" 
-             style="height: 100vh; object-fit: cover; opacity: 0.7;" 
-             alt="Senior High">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Secondary Education</h5>
-          <p>Sariaya Institute, Inc. Senior High School | 2021 – 2023</p>
-        </div>
-        
-      <div class="custom-caption">
-    <h2 style = "text-shadow: 4px 4px 6px rgba(0,0,0,0.7); text-align: center;">Sariaya Institute, Inc.</h2>
-    <p style = "text-align: left; font-size: 20px; text-shadow: 4px 4px 6px rgba(0,0,0,0.7); margin-top: 25px;;">
-      I decided to stay on the same school to take grade 10 to 12. I took STEM as my course and I'm telling you, IT IS NOT EASY, HELL NAW. 
-      But, I unexpectedly got an award in
-      12th grade as a Honor Student. I suppose as average as I am, I still somehow managed to get an 
-      achievement in life. Not as worthy of bragging though, but yeah.
-    </p>
-  </div>
-      </div>
+            </div>
 
-      <!-- Slide 4 -->
-      <div class="carousel-item">
-        <img src="OnlineCertificates/Untitled design (33).png" 
-             class="d-block w-100" 
-             style="height: 100vh; object-fit: cover; opacity: 0.7;" 
-             alt="College">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Bachelor of Science in Information Technology</h5>
-          <p>College of Sciences, Technology and Communications, Inc. | 2023 – Present</p>
-        </div>
-            <div class="custom-caption" style = "margin-top: 20px;">
-    <h2 style = "text-shadow: 4px 4px 6px rgba(0,0,0,0.7); text-align: center;">CSTC College of Sciences, Technology and Communications, Inc.</h2>
-    <p style = "text-align: left; font-size: 20px; text-shadow: 4px 4px 6px rgba(0,0,0,0.7); margin-top: 25px;;">
-     I have graduated from high school and decided to take Information Technology at CSTC.
-     I am currently studying and hoping to graduate, I'm trying my best to become somewhat decent student.
-     Though, I highly doubt that I would get any award or achievement when I graduate, for I am just a terrible student.
-      Still, who knows.
-    </p>
-  </div>
-  
+            <button class="carousel-control-prev custom-carousel-btn" type="button" data-bs-target="#educationCarousel" data-bs-slide="prev" aria-label="Previous slide">
+              <span class="carousel-control-prev-icon custom-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next custom-carousel-btn" type="button" data-bs-target="#educationCarousel" data-bs-slide="next" aria-label="Next slide">
+              <span class="carousel-control-next-icon custom-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </section>
       </div>
 
-    </div>
+      <div class="reveal">
+        <section id="projects" class="section-block bg-light">
+          <h2 style="text-align: center; margin-bottom: 10px;" class="reveal">Portfolio Showcase</h2>
+          <p style="text-align: center; margin-bottom: 8px; padding-top: 10px; font-size: 18px; color: #444;" class="reveal">Explore my early journey — small builds, certifications, and tech fundamentals that shaped my growth as a developer.</p>
+          <p style="text-align: center; margin-bottom: 25px; font-size: 15px;" class="reveal text-muted">These are <strong>archive projects (2023–2024)</strong> — simple, learning-focused builds. My recent, larger projects live on my <a href="https://king-miguel-portfolio.vercel.app" target="_blank" rel="noopener" class="new-portfolio-inline">new portfolio</a>.</p>
 
-    <!-- Controls -->
-    <button class="carousel-control-prev custom-carousel-btn" type="button" data-bs-target="#educationCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon custom-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
+          <div class="threeGolteb" role="tablist" aria-label="Portfolio sections">
+            <div class="proj-Container tab-btn active" data-target="projectsPage" role="tab" aria-selected="true" tabindex="0">
+              <i class="bi bi-code" aria-hidden="true"></i>
+              <h4>Projects</h4>
+            </div>
+            <div class="cert-Container tab-btn" data-target="certPage" role="tab" aria-selected="false" tabindex="0">
+              <i class="bi bi-award-fill" aria-hidden="true"></i>
+              <h4>Certificates</h4>
+            </div>
+            <div class="techstack-Container tab-btn" data-target="techPage" role="tab" aria-selected="false" tabindex="0">
+              <i class="bi bi-code-slash" aria-hidden="true"></i>
+              <h4>Tech Stack</h4>
+            </div>
+          </div>
 
-    <button class="carousel-control-next custom-carousel-btn" type="button" data-bs-target="#educationCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon custom-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</section> </div>
-
-
-<div class = "reveal">
-<section id="projects" class="section-block bg-light">
-  <h2 style = "text-align: center; margin-bottom: 15px;" class = "reveal">Portfolio Showcase</h2>
-  <p style = "text-align: center; margin-bottom: 25px; padding-top: 15px; font-size: 20px" class = "reveal"> Explore my journey through my projects, certifications and technical fundamental knowledge. Each<br>
-  section represents as my progress throughout my entire web developing career.</p>
-  <br>
-  
-  <!-- Navigation Buttons -->
-<div class="threeGolteb">
-  <div class="proj-Container tab-btn active" data-target="projectsPage">
-    <i class="bi bi-code"></i>
-    <h4> Projects</h4>
-  </div>
-
-  <div class="cert-Container tab-btn" data-target="certPage">
-    <i class="bi bi-award-fill"></i>
-    <h4> Certificates</h4>
-  </div>
-
-  <div class="techstack-Container tab-btn" data-target="techPage"> 
-    <i class="bi bi-code-slash"></i> 
-    <h4> Tech Stack</h4>
-  </div>
-</div>
-
-  <hr>
-
-
-  <div class="pages">
-
-    <!-- Projects Page -->
-    <div id="projectsPage" class="page active">
-      <div class="projectContents">
- 
-        <!-- Project 1 -->
-        <div class="Netflix-Replica">
-          <img src="OnlineCertificates/Alimani.jpg" alt="Netflix">
           <hr>
-          <h6>
-            Here's a small simple project about Netflix's Sign In Page. I have done
-            this small project when I was trying to learn from a certain website. Not that
-            big of a deal but I suppose might as well put this in here.
-          </h6>
-          <div class="botpart">
-            <a class="demo" href="Netflux.html">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
-            <a class="demo" href="Netflux.html">Details <i class="bi bi-arrow-right"></i></a>
+
+          <div class="pages">
+
+            <!-- Projects Page -->
+            <div id="projectsPage" class="page active" role="tabpanel">
+              <div class="projectContents">
+
+                <div class="Netflix-Replica">
+                  <img src="OnlineCertificates/Alimani.jpg" alt="Netflix Sign-In Page clone preview" loading="lazy">
+                  <hr>
+                  <h6>A simple Netflix Sign-In page clone built while learning HTML & CSS layout and form styling. A small practice build, but a good start.</h6>
+                  <div class="botpart">
+                    <a class="demo" href="Netflux.html" aria-label="View Netflix clone demo">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
+                    <a class="demo" href="Netflux.html" aria-label="View Netflix clone details">Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+
+                <div class="insta">
+                  <img src="OnlineCertificates/Calbolator.png" alt="JavaScript Calculator app preview" loading="lazy">
+                  <hr>
+                  <h6>A fully functional calculator built with HTML, CSS, and JavaScript — made to practice DOM handling, events, and evaluation logic.</h6>
+                  <div class="botpart">
+                    <a class="demo" href="calcu.html">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
+                    <a class="demo" href="calcu.html">Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+
+                <div class="insta">
+                  <img src="OnlineCertificates/Ricardo.jpg" alt="Instagram profile UI clone preview" loading="lazy">
+                  <hr>
+                  <h6>An Instagram profile UI clone — practicing flexbox, responsive grids, and profile layouts with placeholder posts.</h6>
+                  <div class="botpart">
+                    <a class="demo" href="instagram.html">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
+                    <a class="demo" href="instagram.html">Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+
+                <div class="insta">
+                  <img src="OnlineCertificates/Krillin.png" alt="Solar Eclipse CSS animation preview" loading="lazy">
+                  <hr>
+                  <h6>A CSS-only Solar Eclipse animation — my very first project. Challenging at the time, but a fun introduction to keyframes and gradients.</h6>
+                  <div class="botpart">
+                    <a class="demo" href="SolarBacca.html">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
+                    <a class="demo" href="SolarBacca.html">Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+
+                <div class="insta">
+                  <img src="OnlineCertificates/Golteb.png" alt="Filter search bar with dark mode preview" loading="lazy">
+                  <hr>
+                  <h6>A filtering search bar with dark-mode toggle — built with JavaScript filtering and a simple theme switch (with a little help from ChatGPT).</h6>
+                  <div class="botpart">
+                    <a class="demo" href="FilterWDarkmode.html">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
+                    <a class="demo" href="FilterWDarkmode.html">Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+
+                <div class="insta">
+                  <img src="OnlineCertificates/MovingCloud.png" alt="Moving clouds JavaScript animation preview" loading="lazy">
+                  <hr>
+                  <h6>An animated moving clouds scene — one of my toughest early JS builds. It involved randomization, transitions, and lots of debugging.</h6>
+                  <div class="botpart">
+                    <a class="demo" href="clouds.html">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
+                    <a class="demo" href="clouds.html">Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+
+              </div>
+              <div class="text-center mt-4">
+                <a href="https://king-miguel-portfolio.vercel.app" target="_blank" rel="noopener" class="btn btn-dark btn-lg">
+                  See my latest projects <i class="bi bi-arrow-up-right"></i>
+                </a>
+                <p class="small text-muted mt-2">This archive is kept to show growth — recent work is on the new portfolio.</p>
+              </div>
+            </div>
+
+            <!-- Certificates Page -->
+            <div id="certPage" class="page" role="tabpanel">
+              <div class="certContents">
+                <div class="first-row">
+                  <img src="OnlineCertificates/Cer1.jpg" alt="C# Fundamentals — Certificate of Completion" loading="lazy">
+                  <img src="OnlineCertificates/Cer2.jpg" alt="Basics of Classes and Objects in C# — Certificate" loading="lazy">
+                  <img src="OnlineCertificates/Cer3.jpg" alt="HTML Fundamentals — Certificate" loading="lazy">
+                  <img src="OnlineCertificates/Cer4.jpg" alt="Introduction to CSS — Certificate" loading="lazy">
+                  <img src="OnlineCertificates/Cer5.jpg" alt="Java Fundamentals — Certificate" loading="lazy">
+                  <img src="OnlineCertificates/Cer6.jpg" alt="Modern JavaScript for Beginners — Certificate" loading="lazy">
+                  <img src="OnlineCertificates/Cer7.jpg" alt="OOP in JavaScript — Certificate" loading="lazy">
+                  <img src="OnlineCertificates/Cer8.jpg" alt="Introduction to PHP — Certificate" loading="lazy">
+                  <img src="OnlineCertificates/Cer9.jpg" alt="Introduction to Python — Certificate" loading="lazy">
+                  <img src="OnlineCertificates/Cer10.jpg" alt="Beginner Level SQL — Certificate" loading="lazy">
+                  <img src="OnlineCertificates/Cer11.jpg" alt="Intermediate Level SQL — Certificate" loading="lazy">
+                  <img src="OnlineCertificates/Cer12.jpg" alt="Golang — Certificate" loading="lazy">
+                </div>
+              </div>
+            </div>
+
+            <!-- Tech Stack Page -->
+            <div id="techPage" class="page" role="tabpanel">
+              <div class="techContents">
+                <div class="Stack"><img src="OnlineCertificates/EHTEEMEL.png" alt="HTML5" loading="lazy"></div>
+                <div class="Stack"><img src="OnlineCertificates/si-eses.png" alt="CSS3" loading="lazy"></div>
+                <div class="Stack"><img src="OnlineCertificates/JIVASCREPT.png" alt="JavaScript" loading="lazy"></div>
+                <div class="Stack"><img src="OnlineCertificates/CShuarp.png" alt="C#" loading="lazy"></div>
+                <div class="Stack"><img src="OnlineCertificates/Java.png" alt="Java" loading="lazy"></div>
+                <div class="Stack"><img src="OnlineCertificates/es.png" alt="SQL" loading="lazy"></div>
+                <div class="Stack"><img src="OnlineCertificates/payton.jpg" alt="Python" loading="lazy"></div>
+                <div class="Stack"><img src="OnlineCertificates/Golang.jpg" alt="GoLang" loading="lazy"></div>
+                <div class="Stack"><img src="OnlineCertificates/PIEHPI.png" alt="PHP" loading="lazy"></div>
+              </div>
+              <p class="text-center text-muted small mt-3">Learning stack from my early journey — fundamentals I built on for my recent projects.</p>
+            </div>
+
+          </div>
+        </section>
+      </div>
+
+      <div class="reveal">
+        <section id="hobbies" class="section-block py-5">
+          <h2 class='text-center mb-4 reveal'>Hobbies</h2>
+          <p style="text-align: center; margin-bottom: 25px; padding-top: 10px; font-size: 18px; color:#555;">A glimpse of what keeps me balanced outside coding — simple habits that help me stay focused and consistent.</p>
+          <hr>
+          <div class="container" style="align-items: center; justify-content: center;">
+            <div class="hobbies-accordion" id="hobbiesAccordion">
+
+              <input type="radio" name="hobby" id="hobby1" class="visually-hidden" checked>
+              <label for="hobby1" class="card hobby-card">
+                <div class="card-body">
+                  <div class="hobby-header d-flex align-items-start">
+                    <div class="bg-dark text-white d-flex justify-content-center align-items-center rounded" style="width: auto; height: auto; padding: 15px; margin-right: 12px;">1</div>
+                    <div class="hobby-description">
+                      <h5 class="mb-1">Reading books</h5>
+                      <p class="mb-0 text-white">I read books on human nature and psychology. One favorite is “Ego Is the Enemy” by Ryan Holiday — it taught me to stay humble, low-key, and disciplined.</p>
+                    </div>
+                  </div>
+                </div>
+              </label>
+
+              <input type="radio" name="hobby" id="hobby2" class="visually-hidden">
+              <label for="hobby2" class="card hobby-card">
+                <div class="card-body">
+                  <div class="hobby-header d-flex align-items-start">
+                    <div class="bg-dark text-white d-flex justify-content-center align-items-center rounded" style="width: auto; height: auto; padding: 15px; margin-right: 12px;">2</div>
+                    <div class="hobby-description">
+                      <h5 class="mb-1">Working Out</h5>
+                      <p class="mb-0 text-white">I train 6 days a week. It started as a way to help my grandmother with groceries, and grew into a discipline that keeps me consistent — since Grade 9.</p>
+                    </div>
+                  </div>
+                </div>
+              </label>
+
+              <input type="radio" name="hobby" id="hobby3" class="visually-hidden">
+              <label for="hobby3" class="card hobby-card">
+                <div class="card-body">
+                  <div class="hobby-header d-flex align-items-start">
+                    <div class="bg-dark text-white d-flex justify-content-center align-items-center rounded" style="width: auto; height: auto; padding: 15px; margin-right: 12px;">3</div>
+                    <div class="hobby-description">
+                      <h5 class="mb-1">Playing Video Games</h5>
+                      <p class="mb-0 text-white">Grew up on Dota 1 and League of Legends. Now I play casually — 1 to 4 matches a day — just to unwind.</p>
+                    </div>
+                  </div>
+                </div>
+              </label>
+
+              <input type="radio" name="hobby" id="hobby4" class="visually-hidden">
+              <label for="hobby4" class="card hobby-card">
+                <div class="card-body">
+                  <div class="hobby-header d-flex align-items-start">
+                    <div class="bg-dark text-white d-flex justify-content-center align-items-center rounded" style="width: auto; height: auto; padding: 15px; margin-right: 12px;">4</div>
+                    <div class="hobby-description">
+                      <h5 class="mb-1">Watching Movies</h5>
+                      <p class="mb-0 text-white">I enjoy series like Breaking Bad, Better Call Saul, and Dexter — usually one episode or one film a day to reset.</p>
+                    </div>
+                  </div>
+                </div>
+              </label>
+
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="reveal">
+        <section id="contact" class="section-block">
+          <div class="contact-wrapper">
+            <div class="contact-form">
+              <h3 class="mb-3" style="color:white;">Send me a message</h3>
+              <p class="small mb-3" style="color: rgba(255,255,255,0.85);">For final defense inquiries or collaborations — I'll reply as soon as I can.</p>
+              <form id="contactForm" class="row g-3" novalidate>
+                <div class="col-md-6">
+                  <label class="form-label" for="firstName">First name</label>
+                  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Juan" required autocomplete="given-name">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="lastName">Last name</label>
+                  <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Dela Cruz" required autocomplete="family-name">
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="email">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="message">Message</label>
+                  <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+                </div>
+                <div class="col-12 text-end d-flex justify-content-between align-items-center">
+                  <span id="formStatus" class="small" style="color: #a0ff9a; min-height: 1.2em;"></span>
+                  <button type="submit" class="btn btn-primary">Send <i class="bi bi-send"></i></button>
+                </div>
+              </form>
+            </div>
+
+            <div class="contact-text text-center mb-5">
+              <h2>Contact</h2>
+              <p>Have questions about my early projects or want to discuss my latest work? Feel free to reach out — I'm happy to connect.</p>
+
+              <div class="container summer mt-4">
+                <h4 class="mb-3">Connect with me</h4>
+                <div class="connect-social">
+                  <div class="bcs">
+                    <a href="https://www.youtube.com/channel/UCx3btRBPn-bTjWzk8LrWneA" target="_blank" rel="noopener"><i class="bi bi-youtube" style="color: red;"></i><h6 id="sybau">YouTube</h6></a>
+                  </div>
+                  <div class="bcs">
+                    <a href="https://www.facebook.com/goltebetLog" target="_blank" rel="noopener"><i class="bi bi-facebook" style="color: #1877F2;"></i><h6 id="sybau">Facebook</h6></a>
+                  </div>
+                  <div class="bcs">
+                    <a href="https://www.instagram.com/lule1m/" target="_blank" rel="noopener"><i class="bi bi-instagram" style="color: #8A3AB9;"></i><h6 id="sybau">Instagram</h6></a>
+                  </div>
+                  <div class="bcs">
+                    <a href="https://discord.com/users/64417" target="_blank" rel="noopener"><i class="bi bi-discord" style="color: #5865F2;"></i><h6 id="sybau">Discord</h6></a>
+                  </div>
+                  <div class="bcs">
+                    <a href="https://github.com/KingMiguelito-golteb" target="_blank" rel="noopener"><i class="bi bi-github" style="color: #4078C0;"></i><h6 id="sybau">GitHub</h6></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="bg-dark text-white-50 pt-4">
+        <div class="container">
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-center border-bottom pb-3">
+            <div class="small mb-2 mb-md-0">
+              © <span id="year">2023</span> King Miguel Remo. All rights reserved. • <span class="badge bg-secondary">ARCHIVE 2023–2024</span>
+            </div>
+            <div class="socialmedia-icons">
+              <div class="icon facebook"><div class="tooltip">Facebook</div><a href="https://www.facebook.com/goltebetLog" target="_blank" rel="noopener"><span><i class="bi bi-facebook"></i></span></a></div>
+              <div class="icon youtube"><div class="tooltip">YouTube</div><a href="https://www.youtube.com/channel/UCx3btRBPn-bTjWzk8LrWneA" target="_blank" rel="noopener"><span><i class="bi bi-youtube"></i></span></a></div>
+              <div class="icon tiktok"><div class="tooltip">TikTok</div><a href="https://www.tiktok.com/@goltebetlog21" target="_blank" rel="noopener"><span><i class="bi bi-tiktok"></i></span></a></div>
+              <div class="icon github"><div class="tooltip">GitHub</div><a href="https://github.com/KingMiguelito-golteb" target="_blank" rel="noopener"><span><i class="bi bi-github"></i></span></a></div>
+              <div class="icon instagram"><div class="tooltip">Instagram</div><a href="https://www.instagram.com/lule1m/" target="_blank" rel="noopener"><span><i class="bi bi-instagram"></i></span></a></div>
+              <div class="icon discord"><div class="tooltip">Discord</div><a href="https://discord.com/users/64417" target="_blank" rel="noopener"><span><i class="bi bi-discord"></i></span></a></div>
+            </div>
           </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="insta">
-          <img src="OnlineCertificates/Calbolator.png" alt="Calculator">
-          <hr>
-          <h6>
-            Here's a fully functional calculator that I have built using HTML, CSS and JavaScript.
-            I did this as a challenge on a specific website that I'm learning from. The reason I did
-            create this is to understand more about how JavaScript works.
-          </h6>
-          <div class="botpart">
-            <a class="demo" href="calcu.html">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
-            <a class="demo" href="calcu.html">Details <i class="bi bi-arrow-right"></i></a>
+        <div class="container text-center text-md-start py-5">
+          <div class="row gy-4">
+            <div class="col-12 col-sm-10 col-md-6 col-lg-3 mx-auto text-center text-md-start">
+              <h5 class="text-white">ABOUT ME</h5>
+              <p class="small lh-lg about-me">Aspiring web developer from CSTC. This archive shows my early learning path — from simple clones to interactive JS apps. My new portfolio holds my recent, polished work.</p>
+              <a href="https://king-miguel-portfolio.vercel.app" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm mt-2">View new portfolio →</a>
+            </div>
+            <div class="col-md-3">
+              <h5 class="text-white">MORE PROJECTS</h5>
+              <ul class="list-unstyled small" style="color: white;">
+                <li><a href="https://www.figma.com/design/9yvGnFVvjYzDTeBnBESXYQ/asd?node-id=0-1&p=f" target="_blank" rel="noopener" class="text-white-50">KING'S COFFEE (Figma)</a></li>
+                <li><a href="OnlineCertificates/Vroid.png" class="text-white-50" target="_blank">Vroid 3D Model</a></li>
+                <li><a href="OnlineCertificates/rpg-sprite.png" class="text-white-50" target="_blank">RPG Sprite</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <h5 class="text-white">USEFUL LINKS</h5>
+              <ul class="list-unstyled small">
+                <li><a href="https://github.com/KingMiguelito-golteb" target="_blank" rel="noopener" class="text-white-50">GitHub</a></li>
+                <li><a href="OnlineCertificates/Resume1.pdf" target="_blank" rel="noopener" class="text-white-50">Resume (PDF)</a></li>
+                <li><a href="#projects" class="text-white-50">Archive Projects</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <h5 class="text-white">CONTACT</h5>
+              <ul class="list-unstyled small">
+                <li style="color: white;">Email: <a href="mailto:iggytesoro28@gmail.com" class="text-white-50">iggytesoro28@gmail.com</a></li>
+                <li style="color:white;">Phone: <span class="text-white-50">09085356431</span></li>
+              </ul>
+            </div>
           </div>
         </div>
-
-        <!-- Project 3 -->
-        <div class="insta">
-          <img src="OnlineCertificates/Ricardo.jpg" alt="Instagram">
-          <hr>
-          <h6>
-            Here's a small simple project about Instagram's information profile. I have done
-            this small project when I was trying to learn from a certain website. I added random
-            images as a posts.
-          </h6>
-          <div class="botpart">
-            <a class="demo" href="instagram.html">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
-            <a class="demo" href="instagram.html">Details <i class="bi bi-arrow-right"></i></a>
-          </div>
+        <div class="text-center pb-3 small text-white-50">
+          Hosted on Vercel • <a href="https://king-miguel-portfolio.vercel.app" class="text-white-50" target="_blank" rel="noopener">Go to latest portfolio</a> • Built with HTML, CSS, JS & Bootstrap 5
         </div>
+      </footer>
 
-        <!-- Project 4 -->
-        <div class="insta">
-          <img src="OnlineCertificates/Krillin.png" alt="Solar Eclipse">
-          <hr>
-          <h6>
-            This is a small Solar Eclipse project that I have made using HTML and CSS only.
-            It is also the first project that I have done and it was quite difficult for me at the time.
-          </h6>
-          <div class="botpart">
-            <a class="demo" href="SolarBacca.html">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
-            <a class="demo" href="SolarBacca.html">Details <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="insta">
-          <img src="OnlineCertificates/Golteb.png" alt="Filtering Searchbar">
-          <hr>
-          <h6>
-            I have created this just recently, last vacation to be precise. I was quite bored and 
-            decided to try creating a filtering search bar, I also added a toggle button for dark mode.
-            This is of course was made with the help of ChatGPT.
-          </h6>
-          <div class="botpart">
-            <a class="demo" href="FilterWDarkmode.html">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
-            <a class="demo" href="FilterWDarkmode.html">Details <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <!-- Project 6 -->
-        <div class="insta">
-          <img src="OnlineCertificates/MovingCloud.png" alt="Moving Clouds">
-          <hr>
-          <h6>
-            Another project about moving clouds, to be honest, this is probably the most difficult project I have done.
-            Using JavaScript for me at that time was quite confusing, I have failed quite a bit before successfully creating it.
-          </h6>
-          <div class="botpart">
-            <a class="demo" href="clouds lul.html">Live Demo <i class="bi bi-box-arrow-up-right"></i></a>
-            <a class="demo" href="clouds lul.html">Details <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Certificates Page -->
-    <div id="certPage" class="page">
-      <div class="certContents">
-        <div class = "first-row">
-        <img src = "OnlineCertificates/Cer1.jpg" alt = "C# Fundamentals">
-
-
-      
-   
-        <img src = "OnlineCertificates/Cer2.jpg" alt = "Basics of Classes and Objects in C#">
-
-
-
-
-        <img src = "OnlineCertificates/Cer3.jpg" alt = "HTML Fundamentals">
-
-
-     
-        <img src = "OnlineCertificates/Cer4.jpg" alt = "Introduction to CSS">
-
-   
-
-    
-        
-    
-        <img src = "OnlineCertificates/Cer5.jpg" alt = "Java Fundamentals">
-
-
- 
-  
-        <img src = "OnlineCertificates/Cer6.jpg" alt = "Modern JavaScript for Beginners">
-
-
-        
-      
-        <img src = "OnlineCertificates/Cer7.jpg" alt = "OOP in JavaScript">
-
-
-       
-         
-        <img src = "OnlineCertificates/Cer8.jpg" alt = "Introduction to PHP">
-
-
- 
-        <img src = "OnlineCertificates/Cer9.jpg" alt = "Introduction to Python">
-
-
-        <img src = "OnlineCertificates/Cer10.jpg" alt = "Beginner Level SQL">
-        
-
-
-      
-
-        <img src = "OnlineCertificates/Cer11.jpg" alt = "Intermidiate Level SQL">
-        
-
-
-
-        <img src = "OnlineCertificates/Cer12.jpg" alt = "Golang">
-        
-
-
-        </div>
-        
-
-
-      </div>
-    </div>
-
-    <!-- Tech Stack Page -->
-    <div id="techPage" class="page">
-      <div class="techContents">
-
-    <div class="Stack">
-  <img src="OnlineCertificates/EHTEEMEL.png" alt="HTML">
-</div> 
-
-<div class="Stack">
-  <img src="OnlineCertificates/SI ESES.png" alt="CSS">
-</div> 
-
-<div class="Stack">
-  <img src="OnlineCertificates/JIVASCREPT.png" alt="JS">
-</div> 
-
-<div class="Stack">
-  <img src="OnlineCertificates/CShuarp.png" alt="C#">
-</div>
-
-<div class="Stack">
-  <img src="OnlineCertificates/Java.png" alt="Java">
-</div> 
-
-<div class="Stack">
-  <img src="OnlineCertificates/es.png" alt="SQL">
-</div> 
-
-<div class="Stack">
-  <img src="OnlineCertificates/payton.jpg" alt="Python">
-</div> 
-
-<div class="Stack">
-  <img src="OnlineCertificates/Golang.jpg" alt="GoLang">
-</div> 
-
-<div class="Stack">
-  <img src="OnlineCertificates/PIEHPI.png" alt="Php">
-</div> 
-
-
-      </div>
-    </div>
-
-  </div>
-</section> </div>
-<div class = "reveal">
-<section id = "hobbies" class = "section-block py-5">
-  <h2 class = 'text-center mb-4 reveal'>Hobbies</h2>
-   <p style = "text-align: center; margin-bottom: 25px; padding-top: 15px; font-size: 20px">Explore what i do in my daily activities, it may seem too ordinary and boring <br>
-    but that lifestyle is more than enough for an average person like me.
-  </p>  
-  <hr>
-  <div class = "container" style = "align-items: center; justify-content: c;"> 
-    <div class = "hobbies-accordion" id = "hobbiesAccordion">
-
-    <input type = "radio" name = "hobby" id = "hobby1" class = "visually-hidden" checked>
-    <label for = "hobby1" class = "card hobby-card">
-   <div class ="card-body"> 
-     <div class="hobby-header d-flex align-items-start">
-    <div class = "bg-dark text-white d-flex justify-content-center align-items-center rounded" style = "width: auto; height: auto; padding: 15px; margin-right: 12px;"> 1
-
-    </div>
-    <div class = "hobby-description"> 
-
-      <h5 class = "mb-1">Reading books</h5>
-      <p class = "mb-0 text-white"> I read books quite often, I love books about human nature and psychology.
-       One of my favorite books is titled "EGO IS THE ENEMY" by Ryan Holiday, teaches me all sorts of things about how to be
-       humble and stay lowkey.  
-      </p>
-    </div>
-    </div>
-   </div>
-    </label>
-     
-    <input type = "radio" name = "hobby" id = "hobby2" class = "visually-hidden">
-    <label for = "hobby2" class = "card hobby-card">
-   <div class ="card-body"> 
-     <div class="hobby-header d-flex align-items-start">
-    <div class = "bg-dark text-white d-flex justify-content-center align-items-center rounded" style = "width: auto; height: auto; padding: 15px; margin-right: 12px;"> 2
-
-    </div>
-    <div class = "hobby-description"> 
-      <h5 class = "mb-1">Working Out</h5>
-      <p class = "mb-0 text-white">  I workout 6 days in a week, it kind of became my hobby. At first, I was just working out
-        mainly to help my grandmother lift her groceries, but then I kind of started to do it 6 days a week and it felt like if 
-        I ever stop, I will become the same loser as I was before. I have been lifting
-        since I was grade 9, Perhaps that is one of the reason why I'm small.
-      </p>
-    </div>
-    </div>
-   </div>
-    </label>
-
-     <input type = "radio" name = "hobby" id = "hobby3" class = "visually-hidden">
-    <label for = "hobby3" class = "card hobby-card">
-   <div class ="card-body"> 
-     <div class="hobby-header d-flex align-items-start">
-    <div class = "bg-dark text-white d-flex justify-content-center align-items-center rounded" style = "width: auto; height: auto; padding: 15px; margin-right: 12px;"> 3
-
-    </div>
-    <div class = "hobby-description"> 
-      <h5 class = "mb-1">Playing Video Games</h5>
-      <p class = "mb-0 text-white">I grew up playing Dota 1 and League of Legends.
-        I wouldn't say I am addicted to playing games as I only play certain games and
-      averaging to 1-4 matchup per day.
-      </p>
-    </div>
-    </div>
-   </div>
-    </label>
-
-    <input type = "radio" name = "hobby" id = "hobby4" class = "visually-hidden">
-    <label for = "hobby4" class = "card hobby-card">
-   <div class ="card-body"> 
-     <div class="hobby-header d-flex align-items-start">
-    <div class = "bg-dark text-white d-flex justify-content-center align-items-center rounded" style = "width: auto; height: auto; padding: 15px; margin-right: 12px; "> 4
-
-    </div>
-    <div class = "hobby-description"> 
-      <h5 class = "mb-1">Watching Movies</h5>
-      <p class = "mb-0 text-white">I like watching movies or TV series like "Breaking Bad", "Better Call Saul",
-        and "Dexter". It sort of became my daily routine watching either one episode per day or one entire movie per day.
-      </p>
-    </div>
-    </div>
-   </div>
-    </label>
-
-    
-
-    </div>
-  </div>
-</section></div>
-
-
-
-<div class = "reveal">
-<section id="contact" class="section-block">
-  <div class="contact-wrapper">
-        <div class="contact-form">
-      <form action="#" method="POST" class="row g-3">
-        <div class="col-md-6">
-          <label class="form-label">First name</label>
-          <input type="text" class="form-control" name="firstName" placeholder="Mang" required>
-        </div>
-        <div class="col-md-6">
-          <label class="form-label">Last name</label>
-          <input type="text" class="form-control" name="lastName" placeholder="Kanor" required>
-        </div>
-
-        <div class="col-12">
-          <label class="form-label">Email</label>
-          <input type="email" class="form-control" name="email" placeholder="you@example.com" required>
-        </div>
-
-        <div class="col-12">
-          <label class="form-label">Message</label>
-          <textarea class="form-control" name="message" rows="4" placeholder="Send your message here" required></textarea>
-        </div>
-
-        <div class="col-12 text-end">
-          <button type="submit" class="btn btn-primary">Send</button>
-        </div>
-      </form>
-    </div>
-    <!-- right Side: Text -->
-    <div class="contact-text text-center mb-5">
-      <h2>Contact</h2>
-      <p>
-        Have any questions?   Feel free to reach out to me and send me a message.
-        I will try to answer any questions, so long as my brain capacity is able to do so.
-      </p>  
-
-      <div class ="container summer mt-5">
-          <h4 class = "mb-3"> Connect with me on</h4>
-     <div class="connect-social">
-      
-  <div class="bcs">
-   <a href = "https://www.youtube.com/channel/UCx3btRBPn-bTjWzk8LrWneA" target="_blank"> <i class="bi bi-youtube" style="color: red;"></i>
-    <h6 id="sybau">YouTube</h6></a>
-  </div>
-  <div class="bcs">
-   <a href = "https://www.facebook.com/goltebetLog" target="_blank"> <i class="bi bi-facebook" style="color: #1877F2;"></i>
-    <h6 id="sybau">Facebook</h6></a>
-
-  </div>
-  <div class="bcs">
-    <a href = "https://www.instagram.com/lule1m/" target="_blank"><i class="bi bi-instagram" style="color: #8A3AB9;"></i>
-    <h6 id="sybau">Instagram</h6> </a>
-  </div>
-    <div class="bcs">
-    <a href = "https://discord.com/users/64417" target="_blank"><i class="bi bi-discord" style="color: #5865F2;"></i>
-    <h6 id="sybau">Discord</h6> </a>
-  </div>
-     <div class="bcs">
-    <a href = "https://github.com/KingMiguelito-golteb" target="_blank"><i class="bi bi-github" style="color: #4078C0;"></i>
-    <h6 id="sybau">Github</h6> </a>
+    </main>
   </div>
 
-</div>  
-      </div>
-    </div>
+  <!-- Scripts -->
+  <script src="bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="clouds.js" defer></script>
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    
+    // --- Archive banner handling ---
+    const banner = document.getElementById('archive-banner');
+    function dismissArchiveBanner() {
+      banner.style.display = 'none';
+      localStorage.setItem('archiveBannerDismissed','1');
+      // keep portfolio offset correct
+      document.body.style.paddingTop = document.querySelector('header').offsetHeight + 'px';
+    }
+    // Auto-apply NEW_PORTFOLIO_URL to all links
+    (function applyNewPortfolioUrl(){
+      const url = (typeof NEW_PORTFOLIO_URL !== 'undefined' && NEW_PORTFOLIO_URL && !NEW_PORTFOLIO_URL.includes('your-new-portfolio')) ? NEW_PORTFOLIO_URL : null;
+      if (!url) return;
+      document.querySelectorAll('#new-portfolio-link, #nav-new-portfolio, .new-portfolio-inline').forEach(a=>{
+        if(a) a.href = url;
+      });
+    })();
+    // Respect dismiss only for session (so defense panel always sees it first time)
+    // Uncomment below to persist dismiss across sessions:
+    // if(localStorage.getItem('archiveBannerDismissed')==='1') banner.style.display='none';
 
-    
-  </div>
-</section>
- </div>
+    // If viewer came from new portfolio (?from=new or ?archive), highlight banner
+    const params = new URLSearchParams(window.location.search);
+    if(params.has('from') || params.has('archive') || params.has('old')){
+      banner.classList.add('highlight');
+      setTimeout(()=> banner.classList.remove('highlight'), 4000);
+    }
 
-<footer class="bg-dark text-white-50 pt-4">
-  <!-- Top bar -->
-  <div class="container">
-    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center border-bottom pb-3">
-      <div class="small mb-2 mb-md-0">
-        © <span id="year">2023</span> KingMiguelito. All rights reserved.
-      </div>
-      <div class="socialmedia-icons">
-        <div class="icon facebook">
-          <div class="tooltip">Facebook</div>
-          <a href="https://www.facebook.com/goltebetLog" target="_blank">
-            <span><i class="bi bi-facebook"></i></span>
-          </a>
-        </div>
-        
-        <div class="icon youtube">
-          <div class="tooltip">YouTube</div>
-          <a href="https://www.youtube.com/channel/UCx3btRBPn-bTjWzk8LrWneA" target = "_blank"><span><i class="bi bi-youtube"></i></span></a>
-        </div>
-        
-        <div class="icon tiktok">
-          <div class="tooltip">TikTok</div>
-          <a href="https://www.tiktok.com/@goltebetlog21" target="_blank">
-            <span><i class="bi bi-tiktok"></i></span>
-          </a>
-        </div>
-        
-        <div class="icon github">
-          <div class="tooltip">GitHub</div>
-          <a href="https://github.com/KingMiguelito-golteb" target="_blank">
-            <span><i class="bi bi-github"></i></span>
-          </a>
-        </div>
-        
-        <div class="icon instagram">
-          <div class="tooltip">Instagram</div>
-          <a href="https://www.instagram.com/lule1m/" target="_blank">
-            <span><i class="bi bi-instagram"></i></span>
-          </a>
-        </div>
-        
-        <div class="icon discord">
-          <div class="tooltip">Discord</div>
-          <a href="https://discord.com/users/64417" target="_blank">
-            <span><i class="bi bi-discord"></i></span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Bottom footer -->
-  <div class="container text-center text-md-start py-5">
-    <div class="row gy-4">
-  <div class="col-12 col-sm-10 col-md-6 col-lg-3 mx-auto text-center text-md-start">
-  <h5 class="text-white">ABOUT ME</h5>
-  <p class="small lh-lg about-me">
-    I'm a passionate web developer who loves crafting user-friendly digital experiences.
-    Always exploring new technologies to build better solutions.
-  </p>
-</div>
-      <div class="col-md-3">
-        <h5 class="text-white">MORE PROJECTS</h5>
-        <ul class="list-unstyled small" style="color: white;">
-          <li><a href="https://www.figma.com/design/9yvGnFVvjYzDTeBnBESXYQ/asd?node-id=0-1&p=f" target="_blank" class="text-white-50">KING'S COFFEE</a></li>
-          <li><a href="OnlineCertificates/Vroid.png" class="text-white-50">Vroid 3d Model</a></li>
-          <li><a href="OnlineCertificates/RPG Sprite.png" class="text-white-50">RPG Sprite</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <h5 class="text-white">USEFUL LINKS</h5>
-        <ul class="list-unstyled small">
-          <li><a href="https://github.com/KingMiguelito-golteb" target="_blank" class="text-white-50">GitHub</a></li>
-          <li><a href="OnlineCertificates/Resume1.pdf" target="_blank" class="text-white-50">Resume</a></li>
-          <li><a href="#projects" class="text-white-50">Portfolio</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <h5 class="text-white">CONTACT</h5>
-        <ul class="list-unstyled small">
-          <li style="color: white;">Email: <a href="mailto:iggytesoro28@gmail.com" class="text-white-50">iggytesoro28@gmail.com</a></li>
-          <li style="color:white;">Phone: <span class="text-white-50">09085356431</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
-
-
-</main>
-</div>
-</div>
-</div>
-<!-- bootstrap -->
-<script src="bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
-  <script src="clouds.js"></script>
-<script>
-
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-<script>
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    console.log("=== STICKY NAVBAR DEBUG ===");
-    
-
-    const navbar = document.querySelector('header.sticky-top');
-    console.log("Navbar element:", navbar);
-    console.log("Computed position:", window.getComputedStyle(navbar).position);
-    console.log("Computed top:", window.getComputedStyle(navbar).top);
-    console.log("Computed z-index:", window.getComputedStyle(navbar).zIndex);
-  
-    let parent = navbar.parentElement;
-    while (parent && parent !== document.documentElement) {
-        const overflow = window.getComputedStyle(parent).overflow;
-        const transform = window.getComputedStyle(parent).transform;
-        const filter = window.getComputedStyle(parent).filter;
-        const perspective = window.getComputedStyle(parent).perspective;
-        
-        if (overflow !== 'visible' || transform !== 'none' || filter !== 'none' || perspective !== 'none') {
-            console.log("Problematic parent:", parent);
-            console.log(" - overflow:", overflow);
-            console.log(" - transform:", transform);
-            console.log(" - filter:", filter);
-            console.log(" - perspective:", perspective);
+    // --- Contact form fallback (no backend) — show friendly toast instead of 404 ---
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    if(form){
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        if(!form.checkValidity()){
+          form.reportValidity();
+          return;
         }
-        
-        parent = parent.parentElement;
+        const btn = form.querySelector('button[type="submit"]');
+        const orig = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = 'Sending...';
+        status.textContent = '';
+        setTimeout(()=>{
+          status.textContent = '✓ Message captured! (Demo — connect to Formspree/EmailJS for real sending)';
+          btn.innerHTML = 'Sent ✓';
+          btn.classList.remove('btn-primary');
+          btn.classList.add('btn-success');
+          form.reset();
+          setTimeout(()=>{
+            btn.disabled = false;
+            btn.innerHTML = orig;
+            btn.classList.add('btn-primary');
+            btn.classList.remove('btn-success');
+            status.textContent = '';
+          }, 3500);
+        }, 900);
+      });
     }
-    
- 
-    function enforceStickyNavbar() {
-        navbar.style.position = 'fixed';
-        navbar.style.top = '0';
-        navbar.style.width = '100%';
-        navbar.style.zIndex = '1030';
-        
-       
-        const navbarHeight = navbar.offsetHeight;
-        document.body.style.paddingTop = navbarHeight + 'px';
-    }
-    
- 
-    enforceStickyNavbar();
-    
-  
-    window.addEventListener('resize', enforceStickyNavbar);
-});
 
-</script>
+    // --- Sticky header + archive-banner offset handling ---
+    function updateLayoutOffset(){
+      const header = document.querySelector('header.sticky-top');
+      const bannerH = banner && banner.style.display !== 'none' ? banner.offsetHeight : 0;
+      if(header){
+        header.style.top = bannerH + 'px';
+        document.body.style.paddingTop = (header.offsetHeight + bannerH) + 'px';
+      }
+    }
+    window.addEventListener('load', updateLayoutOffset);
+    window.addEventListener('resize', updateLayoutOffset);
+    // Also watch banner changes
+    new ResizeObserver(updateLayoutOffset).observe(banner);
+    new ResizeObserver(updateLayoutOffset).observe(document.querySelector('header'));
+
+    // --- Tab keyboard accessibility ---
+    document.querySelectorAll('.tab-btn').forEach(btn=>{
+      btn.addEventListener('keydown', (e)=>{
+        if(e.key==='Enter' || e.key===' '){
+          e.preventDefault();
+          btn.click();
+        }
+      });
+    });
+  </script>
 </body>
 </html>

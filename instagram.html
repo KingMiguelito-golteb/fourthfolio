@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instagram Profile</title>
+  <title>Instagram Profile Clone — Archive Project | King Miguel</title>
+  <meta name="description" content="Archive project: Instagram profile UI clone built with HTML & CSS — responsive layout practice.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .project-nav{position:fixed;top:0;left:0;width:100%;background:#0d1117;color:#e6edf3;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;font-family:system-ui,sans-serif;font-size:14px;z-index:20}
+    .project-nav a{color:#58a6ff;text-decoration:none;font-weight:600}
+    .project-nav a:hover{color:#79c0ff}
+    .project-nav .badge{background:#21262d;border:1px solid #30363d;padding:4px 8px;border-radius:999px;font-size:11px;letter-spacing:.06em}
+    body{padding-top:48px}
+  </style>
   <style>
     body {
       margin: 0;
@@ -151,6 +159,11 @@
   </style>
 </head>
 <body>
+  <nav class="project-nav" aria-label="Project navigation">
+    <a href="index.html#projects">← Back to Archive</a>
+    <span class="badge">ARCHIVE • Instagram Clone</span>
+    <a href="index.html">New Portfolio →</a>
+  </nav>
   <div id="background">
     <!-- Profile -->
     <section id="profileInfo">
