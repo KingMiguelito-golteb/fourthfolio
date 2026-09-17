@@ -31,23 +31,17 @@ Every page now has:
 - Navbar **“New Portfolio →”** button
 - Footer **“View new portfolio →”**
 
-**You must set your NEW portfolio URL once:**
+**NEW portfolio URL is now wired:**
 
-Search and replace in `index.html` (and optionally in other demo pages):
+✅ Archive (`king-miguel-archive-portfolio.vercel.app`) → NEW is **`https://king-miguel-portfolio.vercel.app`**
 
-```
-https://your-new-portfolio.vercel.app
-```
-
-Replace with your actual new Vercel URL, e.g. `https://king-miguel-new.vercel.app`
-
-The easiest is to edit the one constant at the top of `index.html`:
+All `New Portfolio →` buttons, banner, and footer already point there. The constant in `index.html` is:
 
 ```js
-const NEW_PORTFOLIO_URL = "https://your-new-portfolio.vercel.app"; // <-- TODO: replace
+const NEW_PORTFOLIO_URL = "https://king-miguel-portfolio.vercel.app"; // ← live
 ```
 
-When you set a real URL there, the JS automatically rewrites all `New Portfolio` links. Still, do a global search-replace for completeness (good for SEO / no-JS).
+If you ever change your new portfolio domain, search-replace `https://king-miguel-portfolio.vercel.app` across the project.
 
 ---
 
@@ -159,14 +153,14 @@ bootstrap-5.3.7-dist/       — local Bootstrap (works offline on Vercel)
 
 ## 🔧 Quick checklist before defense
 
-- [ ] Replace `https://your-new-portfolio.vercel.app` everywhere with your real new URL (search in project)
-- [ ] Test `https://king-miguel-archive-portfolio.vercel.app/` → banner visible, `New Portfolio →` goes to your new site
+- [x] New portfolio wired: `https://king-miguel-portfolio.vercel.app` (all banner/nav/footer links done)
+- [x] Archive live URL: `https://king-miguel-archive-portfolio.vercel.app` (canonical, sitemap, robots done)
+- [ ] Test `https://king-miguel-archive-portfolio.vercel.app/` → banner visible, `New Portfolio →` goes to `king-miguel-portfolio`
 - [ ] Test from new portfolio: add a link `https://king-miguel-archive-portfolio.vercel.app/?from=new#projects` and verify banner highlights
 - [ ] Click each demo: `clouds.html`, `calcu.html`, etc. — ensure nav `← Back to Archive` works
-- [ ] Check resume: `OnlineCertificates/Resume1.pdf` opens (old backtick fixed)
+- [ ] Update resume when ready: replace `OnlineCertificates/Resume1.pdf` with your new PDF (keep same filename or update link in `index.html` footer)
 - [ ] Optional: connect contact form to **Formspree** — replace JS handler in `index.html` with `fetch("https://formspree.io/f/YOUR_ID", ...)`
 - [ ] Optional: compress `EzIcon.png` (currently 2.4 MB) — use tinypng.com and replace for faster load
-- [ ] In Vercel, enable **“Automatically expose System Environment Variables”** off (not needed for static)
 
 ---
 
