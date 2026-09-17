@@ -1,6 +1,6 @@
-# FourthFolio — Archive Portfolio (2023–2024)
+# FourthFolio - Archive Portfolio (2023-2024)
 
-**Author:** King Miguel T. Remo — BSIT, CSTC  
+**Author:** King Miguel T. Remo - BSIT, CSTC  
 **Purpose:** This is my **old / archive portfolio** (built in 3rd year). It showcases small early projects, certificates and tech stack.  
 My **new portfolio** holds recent, defense-ready projects. This archive is kept as a *personal project / second portfolio* and is linked from the new one: **“To see my older / smaller projects, visit this archive.”**
 
@@ -22,12 +22,12 @@ In your **new portfolio**, on any old project card, add:
 <a href="https://king-miguel-archive-portfolio.vercel.app/?archive=1#projects">View archive projects</a>
 ```
 
-The `?from=new` param highlights the top archive banner for 4 seconds so visitors know they came from the new site. Any link to `https://king-miguel-archive-portfolio.vercel.app/` works — the banner is always visible and has a **“visit my new portfolio →”** CTA.
+The `?from=new` param highlights the top archive banner for 4 seconds so visitors know they came from the new site. Any link to `https://king-miguel-archive-portfolio.vercel.app/` works - the banner is always visible and has a **“visit my new portfolio →”** CTA.
 
 ### 2) From this ARCHIVE → NEW (already set up)
 
 Every page now has:
-- Top **ARCHIVE banner** (`🗂️ Archive Portfolio 2023–2024 — visit my new portfolio →`)
+- Top **ARCHIVE banner** (`🗂️ Archive Portfolio 2023-2024 - visit my new portfolio →`)
 - Navbar **“New Portfolio →”** button
 - Footer **“View new portfolio →”**
 
@@ -56,7 +56,7 @@ The “security error when clicking the link from GitHub” happens because:
 
 ### Deploy in 3 clicks:
 
-1. Push this branch to GitHub (already done — `arena/01a0adc6-fourthfolio`)
+1. Push this branch to GitHub (already done - `arena/01a0adc6-fourthfolio`)
 2. Go to **vercel.com → New Project → Import** `KingMiguelito-golteb/fourthfolio`
 3. Leave defaults (Framework: *Other* / Static, Root Directory: `./`, Build: none) → **Deploy**
 
@@ -69,7 +69,7 @@ npm i -g vercel
 vercel --prod
 ```
 
-No build step needed — it’s static HTML/CSS/JS.
+No build step needed - it’s static HTML/CSS/JS.
 
 ### After deploy:
 
@@ -82,25 +82,25 @@ No build step needed — it’s static HTML/CSS/JS.
 
 ### Vercel & URL safety (critical)
 - **Renamed all files with spaces / special chars** (Vercel & Linux are case-sensitive, GitHub’s warning came from `%20` URLs):
-  - `clouds lul.html` → `clouds.html`
-  - `Online Certificates.html` → `certificates.html`
-  - `social media.html` → `social-media.html`
-  - `loading screen.html` → `loading-screen.html`
-  - `malabu Sunshine.jpg` → `malabu-sunshine.jpg`
-  - `primary skol.jpg` → `primary-skol.jpg`
-  - `Untitled design (33).png` → `cstc-campus.png`
-  - `RPG Sprite.png` → `rpg-sprite.png`, `SI ESES.png` → `si-eses.png`
-  - `Resume\`1.pdf` → `Resume1.pdf` (backtick broke the PDF link)
+ - `clouds lul.html` → `clouds.html`
+ - `Online Certificates.html` → `certificates.html`
+ - `social media.html` → `social-media.html`
+ - `loading screen.html` → `loading-screen.html`
+ - `malabu Sunshine.jpg` → `malabu-sunshine.jpg`
+ - `primary skol.jpg` → `primary-skol.jpg`
+ - `Untitled design (33).png` → `cstc-campus.png`
+ - `RPG Sprite.png` → `rpg-sprite.png`, `SI ESES.png` → `si-eses.png`
+ - `Resume\`1.pdf` → `Resume1.pdf` (backtick broke the PDF link)
 - **Created `vercel.json`** with:
-  - `cleanUrls`, security headers (HSTS, nosniff, SAMEORIGIN, XSS, Referrer-Policy)
-  - `Cache-Control: immutable` for assets
-  - **Redirects** for every old spaced URL so old GitHub links still work (`/clouds%20lul.html` → `/clouds.html`, etc.)
+ - `cleanUrls`, security headers (HSTS, nosniff, SAMEORIGIN, XSS, Referrer-Policy)
+ - `Cache-Control: immutable` for assets
+ - **Redirects** for every old spaced URL so old GitHub links still work (`/clouds%20lul.html` → `/clouds.html`, etc.)
 - Added `404.html`, `robots.txt`, `sitemap.xml` for SEO
 
 ### HTML / Content (so you don’t look “stupid” in defense 😅)
-- **Removed inappropriate comment** (`<!-- niggaballs -->`) and any profanity — *would be flagged by a defense panel*
+- **Removed inappropriate comment** (`<!-- niggaballs -->`) and any profanity - *would be flagged by a defense panel*
 - **Fixed duplicate `<div id="portfolio">`** (nested same id broke JS & accessibility)
-- **Rewrote `<head>`:** proper `description`, `keywords`, `canonical`, Open Graph / Twitter cards, `theme-color`, `preconnect`, correct `title: King Miguel Remo | Archive Portfolio (2023–2024)` instead of just “King | Home”
+- **Rewrote `<head>`:** proper `description`, `keywords`, `canonical`, Open Graph / Twitter cards, `theme-color`, `preconnect`, correct `title: King Miguel Remo | Archive Portfolio (2023-2024)` instead of just “King | Home”
 - **Added archive banner** (dismissible, fixed top, explains this is the old portfolio) + dynamic offset for fixed navbar so nothing is hidden
 - **Polished copy** in Hero / Education / Hobbies / Contact to sound confident & professional for a defense, while keeping your voice (e.g., “average skills” → “passionate about building clean & user-focused web experiences”; “HELL NAW” toned down; “terrible student” → more constructive). Original meaning kept, grammar fixed.
 - **Contact form now works without backend:** prevents `action="#"` 404, validates, shows success toast (`✓ Message captured!`). You can later plug Formspree / EmailJS by replacing the handler.
@@ -109,16 +109,16 @@ No build step needed — it’s static HTML/CSS/JS.
 - **Education carousel:** updated image paths to renamed files, improved captions for readability & defense tone
 
 ### Individual demo pages
-- **Netflux.html, calcu.html, instagram.html, SolarBacca.html, clouds.html, FilterWDarkmode.html, certificates.html** — all rebuilt with proper `<!doctype html>`, viewport, `lang="en"`, meta description, and a fixed **Project Nav** (`← Back to Archive` + `New Portfolio →` + `ARCHIVE • tag`)
+- **Netflux.html, calcu.html, instagram.html, SolarBacca.html, clouds.html, FilterWDarkmode.html, certificates.html** - all rebuilt with proper `<!doctype html>`, viewport, `lang="en"`, meta description, and a fixed **Project Nav** (`← Back to Archive` + `New Portfolio →` + `ARCHIVE • tag`)
 - `calcu.js`: removed unsafe `eval`, replaced with sanitized `Function` + `try/catch`, added keyboard support (type, Enter, Backspace)
 - `FilterWDarkmode.html`: fixed `malabu-sunshine.jpg` path, added hints
-- `certificates.html`: fixed all 12 image paths (`Cer1.jpg`…`Cer12.jpg`) — old file used wrong case `Cert.jpg` which 404s on Linux/Vercel
+- `certificates.html`: fixed all 12 image paths (`Cer1.jpg`…`Cer12.jpg`) - old file used wrong case `Cert.jpg` which 404s on Linux/Vercel
 - `instagram.html`: added nav, improved semantic
 - `clouds.html` & `SolarBacca.html`: added caption + nav
 
 ### CSS / JS
 - **portfolio.css:** added archive banner styles, fixed `body { padding-top: 96px }` (was `70px !important` breaking banner offset), removed nuclear `!important` hacks that forced `#portfolio` visible and broke preloader, made reveal animations not get overridden, cleaned responsive rules
-- **clouds.js:** complete rewrite — guarded against missing sidebar elements (old code threw `null.addEventListener` and broke the whole page), added `prefers-reduced-motion` fallback, faster 2.8s preloader, safe `pagesWrapper` checks, passive scroll listeners, preserved tab logic + added keyboard a11y
+- **clouds.js:** complete rewrite - guarded against missing sidebar elements (old code threw `null.addEventListener` and broke the whole page), added `prefers-reduced-motion` fallback, faster 2.8s preloader, safe `pagesWrapper` checks, passive scroll listeners, preserved tab logic + added keyboard a11y
 - `cloud1.js` / `cloud1.css` left functional for the standalone clouds demo
 
 ### Small but important
@@ -132,21 +132,21 @@ No build step needed — it’s static HTML/CSS/JS.
 ## 📁 Project structure
 
 ```
-index.html                  — main archive (with banner, about, education, projects, hobbies, contact)
-portfolio.css               — styles (+ archive banner)
-clouds.js                   — interactions (tabs, reveal, preloader)
-vercel.json                 — Vercel headers, redirects for old spaced URLs, cleanUrls
-404.html                    — friendly 404
+index.html                 - main archive (with banner, about, education, projects, hobbies, contact)
+portfolio.css              - styles (+ archive banner)
+clouds.js                  - interactions (tabs, reveal, preloader)
+vercel.json                - Vercel headers, redirects for old spaced URLs, cleanUrls
+404.html                   - friendly 404
 robots.txt / sitemap.xml
-Netflux.html / netflux.css  — Netflix sign-in clone
-calcu.html / calcu.css / calcu.js — Calculator (sanitized)
-instagram.html              — Instagram profile clone
-SolarBacca.html / solar.css — Eclipse animation
-clouds.html / cloud1.*      — Moving clouds demo
-FilterWDarkmode.*           — Filter + dark mode demo
-certificates.html           — standalone cert gallery (also embedded in index)
-OnlineCertificates/         — images, certs, Resume1.pdf, etc.
-bootstrap-5.3.7-dist/       — local Bootstrap (works offline on Vercel)
+Netflux.html / netflux.css - Netflix sign-in clone
+calcu.html / calcu.css / calcu.js - Calculator (sanitized)
+instagram.html             - Instagram profile clone
+SolarBacca.html / solar.css - Eclipse animation
+clouds.html / cloud1.*     - Moving clouds demo
+FilterWDarkmode.*          - Filter + dark mode demo
+certificates.html          - standalone cert gallery (also embedded in index)
+OnlineCertificates/        - images, certs, Resume1.pdf, etc.
+bootstrap-5.3.7-dist/      - local Bootstrap (works offline on Vercel)
 ```
 
 ---
@@ -157,16 +157,16 @@ bootstrap-5.3.7-dist/       — local Bootstrap (works offline on Vercel)
 - [x] Archive live URL: `https://king-miguel-archive-portfolio.vercel.app` (canonical, sitemap, robots done)
 - [ ] Test `https://king-miguel-archive-portfolio.vercel.app/` → banner visible, `New Portfolio →` goes to `king-miguel-portfolio`
 - [ ] Test from new portfolio: add a link `https://king-miguel-archive-portfolio.vercel.app/?from=new#projects` and verify banner highlights
-- [ ] Click each demo: `clouds.html`, `calcu.html`, etc. — ensure nav `← Back to Archive` works
+- [ ] Click each demo: `clouds.html`, `calcu.html`, etc. - ensure nav `← Back to Archive` works
 - [ ] Update resume when ready: replace `OnlineCertificates/Resume1.pdf` with your new PDF (keep same filename or update link in `index.html` footer)
-- [ ] Optional: connect contact form to **Formspree** — replace JS handler in `index.html` with `fetch("https://formspree.io/f/YOUR_ID", ...)`
-- [ ] Optional: compress `EzIcon.png` (currently 2.4 MB) — use tinypng.com and replace for faster load
+- [ ] Optional: connect contact form to **Formspree** - replace JS handler in `index.html` with `fetch("https://formspree.io/f/YOUR_ID", ...)`
+- [ ] Optional: compress `EzIcon.png` (currently 2.4 MB) - use tinypng.com and replace for faster load
 
 ---
 
 ## 🤝 Notes for panel
 
-This site is intentionally kept as an **archive** to show growth. My recent, larger, production projects are on my new portfolio. This archive demonstrates fundamentals: semantic HTML, responsive CSS, vanilla JS interactions, and iterative improvement — all built without frameworks in 3rd year and now cleaned for Vercel hosting.
+This site is intentionally kept as an **archive** to show growth. My recent, larger, production projects are on my new portfolio. This archive demonstrates fundamentals: semantic HTML, responsive CSS, vanilla JS interactions, and iterative improvement - all built without frameworks in 3rd year and now cleaned for Vercel hosting.
 
-— King Miguel Remo
+ - King Miguel Remo
 
