@@ -1,0 +1,48 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
+        { "key": "X-DNS-Prefetch-Control", "value": "on" }
+      ]
+    },
+    {
+      "source": "/OnlineCertificates/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/bootstrap-5.3.7-dist/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ],
+  "redirects": [
+    { "source": "/clouds%20lul.html", "destination": "/clouds.html", "permanent": true },
+    { "source": "/clouds%20lul", "destination": "/clouds.html", "permanent": true },
+    { "source": "/Online%20Certificates.html", "destination": "/certificates.html", "permanent": true },
+    { "source": "/Online%20Certificates", "destination": "/certificates.html", "permanent": true },
+    { "source": "/social%20media.html", "destination": "/social-media.html", "permanent": true },
+    { "source": "/social%20media", "destination": "/social-media.html", "permanent": true },
+    { "source": "/loading%20screen.html", "destination": "/loading-screen.html", "permanent": true },
+    { "source": "/OnlineCertificates/malabu%20Sunshine.jpg", "destination": "/OnlineCertificates/malabu-sunshine.jpg", "permanent": true },
+    { "source": "/OnlineCertificates/primary%20skol.jpg", "destination": "/OnlineCertificates/primary-skol.jpg", "permanent": true },
+    { "source": "/OnlineCertificates/Untitled%20design%20(33).png", "destination": "/OnlineCertificates/cstc-campus.png", "permanent": true },
+    { "source": "/OnlineCertificates/RPG%20Sprite.png", "destination": "/OnlineCertificates/rpg-sprite.png", "permanent": true },
+    { "source": "/OnlineCertificates/SI%20ESES.png", "destination": "/OnlineCertificates/si-eses.png", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/$1" }
+  ]
+}

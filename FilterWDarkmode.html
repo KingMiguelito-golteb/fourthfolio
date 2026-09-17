@@ -1,27 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="FilterWDarkmode.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filter Search + Dark Mode — Archive Project | King Miguel</title>
+  <meta name="description" content="Archive project: filtering search bar with dark-mode toggle built with HTML, CSS & JavaScript.">
+  <link rel="stylesheet" href="FilterWDarkmode.css">
+  <style>
+    .project-nav { background:#0d1117; color:#e6edf3; padding:10px 16px; display:flex; justify-content:space-between; align-items:center; font-family:system-ui, sans-serif; font-size:14px; }
+    .project-nav a { color:#58a6ff; text-decoration:none; font-weight:600; }
+    .project-nav a:hover { color:#79c0ff; }
+    .project-nav .badge { background:#21262d; border:1px solid #30363d; padding:4px 8px; border-radius:999px; font-size:11px; letter-spacing:.06em; }
+  </style>
 </head>
 <body>
 
+<nav class="project-nav" aria-label="Project navigation">
+  <a href="index.html#projects">← Back to Archive</a>
+  <span class="badge">ARCHIVE • 2024</span>
+  <a href="index.html">New Portfolio →</a>
+</nav>
+
 <div class="search-wrapper">
-  <!-- Search Box -->
   <div class="box" id="search-box" style="position:relative;">
-    <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="search">
-    <input type="text" id="search-input" placeholder="Search...">
-  
-   
+    <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="" aria-hidden="true">
+    <input type="text" id="search-input" placeholder="Search... (try 'java', 'python', 'Golteb')..." autocomplete="off">
   </div>
-
-   <div class="dropdown" id="dropdown"></div>
-
-  <!-- Spinner -->
-  <div class="spinner" id="spinner"></div>
-
-  <!-- Dark Mode Toggle Switch -->
-  <label class="toggle-switch">
-    <input type="checkbox" id="theme-toggle">
+  <div class="dropdown" id="dropdown" role="listbox" aria-label="Suggestions"></div>
+  <div class="spinner" id="spinner" aria-hidden="true"></div>
+  <label class="toggle-switch" title="Toggle dark mode">
+    <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
     <span class="slider"></span>
   </label>
 </div>
@@ -29,31 +37,32 @@
 <main>
   <div class="contents">
     <div>
-      <img src="OnlineCertificates/malabu Sunshine.jpg" alt="Malabu Sunshine">
+      <img src="OnlineCertificates/malabu-sunshine.jpg" alt="Malabu Sunshine house">
       <div>
         <h1>Malabu Sunshine</h1>
-        <p>444 Salazar street, Malabu, New Orleans</p>
+        <p>444 Salazar Street, Malabu, New Orleans</p>
       </div>
     </div>
     <div>
-      <img src="OnlineCertificates/RandomHouse.jpg" alt="Golteb alimani Location">
+      <img src="OnlineCertificates/RandomHouse.jpg" alt="Golteb Alimani location">
       <div>
-        <h1>Golteb alimani Location</h1>
-        <p>211 tolgeb stree, Qeuwx, Dalha</p>
+        <h1>Golteb Alimani Location</h1>
+        <p>211 Tolgeb Street, Qeuwx, Dalha</p>
       </div>
     </div>
     <div>
-      <img src="OnlineCertificates/bootleg.jpg" alt="Bootleg">
+      <img src="OnlineCertificates/bootleg.jpg" alt="Bootleg location">
       <div>
         <h1>Bootleg</h1>
         <p>308 Negra Arroyo Lane, Albuquerque, New Mexico</p>
       </div>
     </div>
   </div>
+  <p style="text-align:center; color:#666; font-family:system-ui,sans-serif; font-size:13px; margin:18px 0;">
+    Try typing “python”, “javascript”, “Golteb” or press Enter on “java” for a demo filter. Toggle dark mode on the right.
+  </p>
 </main>
 
-<script  src="FilterWDarkmode.js">
-</script>
-
+<script src="FilterWDarkmode.js"></script>
 </body>
 </html>

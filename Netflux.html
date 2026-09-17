@@ -1,50 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Netflix Login Form </title>
-    <link rel="stylesheet" href="netflux.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Sign-In Clone — Archive Project | King Miguel</title>
+  <meta name="description" content="Archive project: Netflix sign-in page clone built with HTML & CSS for learning layout and form styling.">
+  <link rel="stylesheet" href="netflux.css">
+  <style>
+    .project-nav { background:#0d1117; color:#e6edf3; padding:10px 16px; display:flex; justify-content:space-between; align-items:center; font-family:system-ui,sans-serif; font-size:14px; position:relative; z-index:10; }
+    .project-nav a { color:#58a6ff; text-decoration:none; font-weight:600; }
+    .project-nav a:hover { color:#79c0ff; }
+    .project-nav .badge { background:#21262d; border:1px solid #30363d; padding:4px 8px; border-radius:999px; font-size:11px; letter-spacing:.06em; color:#e6edf3; }
+  </style>
 </head>
-    <body>
-        <!-- Write HTML code here -->
-        <nav> 
-        <img src= "https://images.ctfassets.net/y2ske730sjqp/821Wg4N9hJD8vs5FBcCGg/9eaf66123397cc61be14e40174123c40/Vector__3_.svg" alt = "Logo">
+<body>
+  <nav class="project-nav" aria-label="Project navigation">
+    <a href="index.html#projects">← Back to Archive</a>
+    <span class="badge">ARCHIVE • Netflix Clone</span>
+    <a href="index.html">New Portfolio →</a>
+  </nav>
 
-        </nav>
+  <nav style="padding:12px 16px;">
+    <img src="https://images.ctfassets.net/y2ske730sjqp/821Wg4N9hJD8vs5FBcCGg/9eaf66123397cc61be14e40174123c40/Vector__3_.svg" alt="Netflix logo" style="height:28px;">
+  </nav>
 
-        <div class = "form-wrapper">
-            <h2>Sign In</h2>
-            <form>
-                <div class = "form-control">
-                <input type ="text" required >    
-                <label>Email or phone number </label> 
-
-
-                 </div>
-                 <div class ="form-control">
-                    <input type = "password" required >
-                  <label>Password </label>
-
-                 </div>
-                 <button>Sign In </button>
-                 <p id = "or">OR </p>
-                 <button id = "code">Use a sign-in code </button>
-                 
-                <div class = "form-help">
-                    <div class = "remember-me">
-                        <input type = "checkbox">
-                        <label>Remember me </label>
-                         </div>
-                         
-
-                 <a href = "#">Need help?</a>
-                     </div>
-
-           
-           </form>
-           <p> New to Netflix?<a href = "#"> Sign up now </a></p>
-           <small>This page is protected by Google reCAPTCHA to ensure you're not a bot.<a href ="#"> Learn more </a></small>
-            
-         </div>
-        <script src="script.js"></script>
-    </body>
+  <div class="form-wrapper" role="main">
+    <h2>Sign In</h2>
+    <form onsubmit="event.preventDefault(); alert('Demo only — no real sign-in. This is a UI clone for learning.');">
+      <div class="form-control">
+        <input type="text" required autocomplete="email" aria-label="Email or phone number">
+        <label>Email or phone number</label>
+      </div>
+      <div class="form-control">
+        <input type="password" required autocomplete="current-password" aria-label="Password">
+        <label>Password</label>
+      </div>
+      <button type="submit">Sign In</button>
+      <p id="or">OR</p>
+      <button type="button" id="code">Use a sign-in code</button>
+      <div class="form-help">
+        <div class="remember-me">
+          <input type="checkbox" id="remember">
+          <label for="remember">Remember me</label>
+        </div>
+        <a href="#">Need help?</a>
+      </div>
+    </form>
+    <p> New to Netflix? <a href="#">Sign up now</a></p>
+    <small>This page is protected by Google reCAPTCHA to ensure you're not a bot. <a href="#">Learn more</a></small>
+    <p style="margin-top:16px; font-size:12px; opacity:.7; text-align:center;">Clone for educational purposes only — not affiliated with Netflix.</p>
+  </div>
+</body>
 </html>

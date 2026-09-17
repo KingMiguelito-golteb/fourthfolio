@@ -1,37 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Kalbolator</title>
-    <link rel="stylesheet" href="calcu.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator — Archive Project | King Miguel</title>
+  <meta name="description" content="Archive project: JavaScript calculator built with HTML, CSS, JS — handling DOM events and evaluation.">
+  <link rel="stylesheet" href="calcu.css">
+  <style>
+    .project-nav { background:#0d1117; color:#e6edf3; padding:10px 16px; display:flex; justify-content:space-between; align-items:center; font-family:system-ui,sans-serif; font-size:14px; position:fixed; top:0; left:0; width:100%; z-index:10; }
+    .project-nav a { color:#58a6ff; text-decoration:none; font-weight:600; }
+    .project-nav a:hover { color:#79c0ff; }
+    .project-nav .badge { background:#21262d; border:1px solid #30363d; padding:4px 8px; border-radius:999px; font-size:11px; letter-spacing:.06em; }
+    body { padding-top:56px; }
+  </style>
 </head>
 <body>
- 
-    <div class="calculator" style = "box-shadow: 12px 12px  3px 1px rgba(0, 0, 0, 0.564); ;">
-        
-        <input type="text" id="display" disabled>
+  <nav class="project-nav" aria-label="Project navigation">
+    <a href="index.html#projects">← Back to Archive</a>
+    <span class="badge">ARCHIVE • Calculator</span>
+    <a href="index.html">New Portfolio →</a>
+  </nav>
 
-        <div class="buttons">
-            <button class="btn" onclick = "clearDisplay()">C</button>
-            <button class="btn" onclick = "deleteLast()">←</button>
-            <button class="btn" onclick="appendToDisplay('/')">/</button>
-            <button class="btn" onclick="appendToDisplay('*')">*</button>
-            <button class="btn" onclick="appendToDisplay('7')">7</button>
-            <button class="btn" onclick="appendToDisplay('8')">8</button>
-            <button class="btn" onclick="appendToDisplay('9')">9</button>
-            <button class="btn" onclick="appendToDisplay('-')">-</button>
-            <button class="btn" onclick="appendToDisplay('4')">4</button>
-            <button class="btn" onclick="appendToDisplay('5')">5</button>
-            <button class="btn" onclick="appendToDisplay('6')">6</button>
-            <button class="btn"onclick="appendToDisplay('+')">+</button>
-            <button class="btn" onclick="appendToDisplay('1')">1</button>
-            <button class="btn" onclick="appendToDisplay('2')">2</button>
-            <button class="btn" onclick="appendToDisplay('3')">3</button>
-            <button class="btn" onclick="appendToDisplay('0')">0</button>
-            <button class="btn" onclick="appendToDisplay('.')">.</button>
-            <button class="btn equal" onclick = "calculateResult()">=</button>
-        </div>
+  <div class="calculator" style="box-shadow: 12px 12px 3px 1px rgba(0,0,0,0.56); margin:40px auto;">
+    <input type="text" id="display" disabled aria-label="Calculator display" placeholder="0">
+    <div class="buttons">
+      <button class="btn" onclick="clearDisplay()" aria-label="Clear">C</button>
+      <button class="btn" onclick="deleteLast()" aria-label="Delete last">←</button>
+      <button class="btn" onclick="appendToDisplay('/')" aria-label="Divide">/</button>
+      <button class="btn" onclick="appendToDisplay('*')" aria-label="Multiply">*</button>
+      <button class="btn" onclick="appendToDisplay('7')">7</button>
+      <button class="btn" onclick="appendToDisplay('8')">8</button>
+      <button class="btn" onclick="appendToDisplay('9')">9</button>
+      <button class="btn" onclick="appendToDisplay('-')" aria-label="Subtract">-</button>
+      <button class="btn" onclick="appendToDisplay('4')">4</button>
+      <button class="btn" onclick="appendToDisplay('5')">5</button>
+      <button class="btn" onclick="appendToDisplay('6')">6</button>
+      <button class="btn" onclick="appendToDisplay('+')" aria-label="Add">+</button>
+      <button class="btn" onclick="appendToDisplay('1')">1</button>
+      <button class="btn" onclick="appendToDisplay('2')">2</button>
+      <button class="btn" onclick="appendToDisplay('3')">3</button>
+      <button class="btn" onclick="appendToDisplay('0')">0</button>
+      <button class="btn" onclick="appendToDisplay('.')">.</button>
+      <button class="btn equal" onclick="calculateResult()" aria-label="Calculate result">=</button>
     </div>
+    <p style="text-align:center; font-family:system-ui,sans-serif; font-size:12px; color:#555; margin-top:12px;">Keyboard: type numbers & Enter for “=” — Backspace to delete.</p>
+  </div>
 
-    <script src="calcu.js"></script>
+  <script src="calcu.js"></script>
+  <script>
+    // keyboard support
+    document.addEventListener('keydown', e=>{
+      if(/[0-9+\-*/.()]/.test(e.key)) appendToDisplay(e.key);
+      if(e.key==='Enter' || e.key==='=') { e.preventDefault(); calculateResult(); }
+      if(e.key==='Backspace') deleteLast();
+      if(e.key.toLowerCase()==='c' || e.key==='Escape') clearDisplay();
+    });
+  </script>
 </body>
 </html>
